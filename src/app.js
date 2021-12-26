@@ -15,8 +15,8 @@ const app = express();
 app.use(express.json()); // To parse the json data
 app.use(morgan("combined")); // To log the requests
 
-app.listen(process.env.APP_PORT, () => {
-  console.log(`Application is running on ${process.env.APP_PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Application is running on ${process.env.PORT}`);
   app.use("/records", RecordsRoutes);
 
   app.use((req, res, next) => {
