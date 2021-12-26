@@ -1,4 +1,5 @@
 const express = require("express");
+const morgan = require("morgan");
 
 const { RecordsRoutes } = require("./routes");
 
@@ -12,6 +13,7 @@ loaders(); // Connection to mongo
 const app = express();
 
 app.use(express.json()); // To parse the json data
+app.use(morgan("combined")); // To log the requests
 
 app.listen(process.env.APP_PORT, () => {
   console.log(`Application is running on ${process.env.APP_PORT}`);
