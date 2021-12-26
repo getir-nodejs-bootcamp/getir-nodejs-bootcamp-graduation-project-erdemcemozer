@@ -1,26 +1,48 @@
-# Getir Node.js Bootcamp Graduation Project
-## The Challenge
-We’d like you to create a RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format.
-Requirements
-- The code should be written in Node.js using express framework
-- The endpoint should just handle HTTP POST requests.
-- The application should be deployed on AWS or Heroku. You don’t need to use any API Gateway, Load Balancers or any other layer than the developed application.
-- The up to date repo should be publicly available in Github, Bitbucket or equivalent.
+# Getir Node.js Bootcamp Graduation Project - Erdem Özer
 
-## Deliverables
-- The public repo URL which has the source code of the project, and a set of instructions if there is any project specific configurations needed to run the project.
-- The public endpoint URL of the deployed API which is available for testing.
+Welcome to my humble project! This is a NodeJS web server created with Express framework.
 
-## Worth Highlighting
-We expect these requirements can be delivered in 3 to 6 hours. However, it is not a speed test. Take your time! Your feedback on how much actual time you were needed to deliver the task will be very helpful but will not be used for the evaluation.
-You are free to use any libraries to deliver the needed functionality, but be prepared to explain other solutions that you would have implemented if you have more time.
+If you want to build project in your local host, first clone the repo to your computer.
 
-## Crucial Points
-- Delivering a Working RESTful API.
-- Clean and Production Ready Code
-- Error Handling
-- Comments and Documentation
-- Unit and/or Integration Tests (Jest is preferable but Mocha also works)
-- Avoid Over Engineering
+Then install packages with npm.
 
-Good luck with this assignment! Try to make good use of this task to demonstrate and show off your coding skills. If you have any questions, don’t hesitate to ask your contact person within Getir.
+```bash
+npm install
+```
+Now you can start the app with: 
+
+```bash
+npm start
+```
+
+You will see some logs in the console after a clean build, it should give the below logs, you are now started the web application.
+
+```bash
+Application is running on 3000
+You are currently connected to your mongo database
+```
+
+## What did i used as frameworks and libraries ?
+
+- express
+- mongoose
+- dotenv
+- cors
+- joi
+- joi-date
+- morgan
+- http-status
+- nodemon
+- jest
+
+## Application
+
+After starting out app it connects to a MongoDB Cloud server with a connection string. This string kept on .env file, if you want to change the MongoDB or applicaion port you can change it in here. Then you can make a POST request with parameters on body. You should use the /records route. Below you can see required fields for body.
+
+I used joi for validation of body. Which validates if the dates in the "YYYY-MM-DD" format, minCount and maxCount is number and they takes minimum zero.
+
+## Endpoints
+
+| Method                       | Description                                                     | Required Body Fields     |
+| ---------------------------- | --------------------------------------------------------------- | ------------------------ |
+| POST /records                | Returns records with wanted date and total count                | `startDate, endDate, minCount, maxCount ` |
