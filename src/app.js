@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 
 const { RecordsRoutes } = require("./routes");
 
@@ -14,6 +15,12 @@ const app = express();
 
 app.use(express.json()); // To parse the json data
 app.use(morgan("combined")); // To log the requests
+app.use(
+  cors({
+    methods: "*",
+    origin: "*",
+  })
+);
 
 app.listen(process.env.PORT, () => {
   console.log(`Application is running on ${process.env.PORT}`);
