@@ -24,6 +24,12 @@ Application is running on 3000
 You are currently connected to your mongo database
 ```
 
+For testing on your local machine just run:
+
+```bash
+npm test
+```
+
 ## What did i used as frameworks and libraries ?
 
 - express
