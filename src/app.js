@@ -34,3 +34,7 @@ app.listen(process.env.PORT, () => {
 
   app.use(errorHandler);
 });
+
+module.exports = {
+  app,
+};
