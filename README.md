@@ -23,7 +23,7 @@ You will see some logs in the console after a clean build, it should give the be
 Application is running on 3000
 You are currently connected to your mongo database
 ```
-
+I implemented jest for local testing and supertest for endpoint testing.
 For testing on your local machine just run:
 
 ```bash
@@ -42,10 +42,11 @@ npm test
 - http-status
 - nodemon
 - jest
+- supertest
 
 ## Application
 
-After starting out app it connects to a MongoDB Cloud server with a connection string. This string kept on .env file, if you want to change the MongoDB or applicaion port you can change it in here. Then you can make a POST request with parameters on body. You should use the /records route. Below you can see required fields for body.
+After starting out app it connects to a MongoDB Cloud server with a connection string. This string kept on .env file, if you want to change the MongoDB or application port you can change it in here. Then you can make a POST request with parameters on body. You should use the /records route. Below you can see required fields for body.
 
 I used JOI for validation of body. Which validates if the dates in the "YYYY-MM-DD" format, minCount and maxCount is number and they takes minimum zero.
 
